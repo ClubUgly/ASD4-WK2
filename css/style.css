@@ -1,7 +1,7 @@
 /*	John Williams
 	Project: ASD
-	Oct 25, 2012
-	Week 1
+	Oct 28, 2012
+	Week 2
 	The Flower Shop
 */
 
@@ -11,7 +11,7 @@
 }
 
 /*To disable truncation for list descriptions */
-.ui-li-desc {
+.ui-li .ui-li-desc {
 white-space: normal;
 }
 /*grid commit*/
