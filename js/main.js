@@ -16,15 +16,15 @@ $(function(){
 				var lang = response.contact1[i];
 				$(''+
 					'<div class="contact">'+
-						'<p>'+ fname +'</p>'+
-						'<p>'+ email +'</p>'+
-						'<p>'+ url +'</p>'+
+						'<p>'+ lang.fname +'</p>'+
+						'<p>'+ lang.email +'</p>'+
+						'<p>'+ lang.url +'</p>'+
 						/*'<p>'+ sex +'</p>'+
 						'<p>'+ group +'</p>'+*/
-						'<p>'+ borndate +'</p>'+
-						'<p>'+ quantity +'</p>'+
+						'<p>'+ lang.borndate +'</p>'+
+						'<p>'+ lang.quantity +'</p>'+
 						/*'<p>'+ comments +'</p>'+*/
-						'<p>'+ terms +'</p>'+
+						'<p>'+ lang.terms +'</p>'+
 					'</div>'
 				).appendTo('contact1');
 			};
