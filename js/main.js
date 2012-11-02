@@ -5,6 +5,45 @@
 
 //alert("JavaScript works!");
 
+$(function(){
+	
+	$.ajax({
+		url:	'xhr/data.json',
+		type: 'GET',
+		dataType:	'json',
+		success: function(response){
+			console.log(response);
+			}
+		});
+
+});
+
+$(function(){
+	
+	$.ajax({
+		url:	'xhr/data.xml',
+		type: 'GET',
+		dataType:	'xml',
+		success: function(response){
+			console.log(response);
+			}
+		});
+
+});
+
+$(function(){
+	
+	$.ajax({
+		url:	'xhr/data.csv',
+		type: 'GET',
+		dataType:	'csv',
+		success: function(response){
+			console.log(response);
+			}
+		});
+
+});
+
 // Wait until the DOM is ready.
 $('#myorder').on('pageinit', function () {
 	console.log("Home Page loaded.");
