@@ -12,9 +12,24 @@ $(function(){
 		type: 'GET',
 		dataType:	'json',
 		success: function(response){
-			console.log(response);
-			}
-		});
+			for(var i=0, j=response.contact1.length; i<j; i++){
+				var lang = response.contact1[i];
+				$(''+
+					'<div class="contact">'+
+						'<p>'+ fname +'</p>'+
+						'<p>'+ email +'</p>'+
+						'<p>'+ url +'</p>'+
+						/*'<p>'+ sex +'</p>'+
+						'<p>'+ group +'</p>'+*/
+						'<p>'+ borndate +'</p>'+
+						'<p>'+ quantity +'</p>'+
+						/*'<p>'+ comments +'</p>'+*/
+						'<p>'+ terms +'</p>'+
+					'</div>'
+				).appendTo('contact1');
+			};
+		}
+	});
 
 });
 
