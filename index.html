@@ -1070,10 +1070,11 @@
 					<input name="borndate" value="" placeholder="MM/DD/YYYY" id="borndate" type="date" data-role="datebox" data-options='{"mode": "flipbox"}'>
 				</div>
 
-				
+							
 				<div data-role="fieldcontain">
-					<label for="groups">Candidate Selection:</label>
+					<label for="groups" class="select">Candidate Selection:</label>
 					<select name="groups" id="groups" data-native-menu="false" class="required">
+
 						<option data-placeholder="true">Please Select One</option>
 						<optgroup label="Democrat">
 							<option value="daisy-1a">Barack Obama</option>
@@ -1099,7 +1100,7 @@
 				
 				<div data-role="fieldcontain">
 					<label for="quantity">Number of persons in household:</label><br />
-					<input type="range" name="quantity" id="quantity" value="3" min="1" max="5"/>
+					<input type="range" name="quantity" id="quantity" value="3" min="1" max="15" data-highlight="true"/>
 				</div>
 				
 				<div data-role="fieldcontain">
