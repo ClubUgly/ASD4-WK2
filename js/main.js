@@ -13,26 +13,27 @@ $(function(){
 		dataType:	'json',
 		success: function(response){
 			for(var i=0, j=response.contact1.length; i<j; i++){
-				var lang = response.contact1[i];
+				var cont = response.contact1[i];
 				$(''+
 					'<div class="contact">'+
-						'<p>'+ lang.fname +'</p>'+
-						'<p>'+ lang.email +'</p>'+
-						'<p>'+ lang.url +'</p>'+
-						/*'<p>'+ sex +'</p>'+
-						'<p>'+ group +'</p>'+*/
-						'<p>'+ lang.borndate +'</p>'+
-						'<p>'+ lang.quantity +'</p>'+
-						/*'<p>'+ comments +'</p>'+*/
-						'<p>'+ lang.terms +'</p>'+
+						'<p>'+ cont.fname +'</p>'+
+						'<p>'+ cont.email +'</p>'+
+						'<p>'+ cont.url +'</p>'+
+						'<p>'+ cont.sex +'</p>'+
+						'<p>'+ cont.groups +'</p>'+
+						'<p>'+ cont.borndate +'</p>'+
+						'<p>'+ cont.quantity +'</p>'+
+						'<p>'+ cont.comments +'</p>'+
+						'<p>'+ cont.terms +'</p>'+
 					'</div>'
-				).appendTo('contact1');
+				).appendTo('#myxhr');
+				console.log(response);
 			};
 		}
 	});
 
 });
-
+/*
 $(function(){
 	
 	$.ajax({
@@ -58,6 +59,7 @@ $(function(){
 		});
 
 });
+*/
 
 // Wait until the DOM is ready.
 $('#myorder').on('pageinit', function () {
