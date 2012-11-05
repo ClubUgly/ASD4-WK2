@@ -6,7 +6,7 @@
 //alert("JavaScript works!");
 
 $(function(){
-	
+	$('#myxhr').empty();
 	$.ajax({
 		url:	'xhr/data.json',
 		type: 'GET',
