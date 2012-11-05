@@ -16,15 +16,15 @@ $(function(){
 				var cont = response.contact1[i];
 				$(''+
 					'<div class="contact">'+
-						'<p>'+ cont.fname +'</p>'+
-						'<p>'+ cont.email +'</p>'+
-						'<p>'+ cont.url +'</p>'+
-						'<p>'+ cont.sex +'</p>'+
-						'<p>'+ cont.groups +'</p>'+
-						'<p>'+ cont.borndate +'</p>'+
-						'<p>'+ cont.quantity +'</p>'+
-						'<p>'+ cont.comments +'</p>'+
-						'<p>'+ cont.terms +'</p>'+
+						'<p>'+ 'Name: ' + cont.fname +'</p>'+
+						'<p>'+ 'Email: ' + cont.email +'</p>'+
+						'<p>'+ 'Website: ' + cont.url +'</p>'+
+						'<p>'+ 'Gender: ' + cont.sex +'</p>'+
+						'<p>'+ 'Candidate Selection: ' + cont.groups +'</p>'+
+						'<p>'+ 'Date of Birth: ' + cont.borndate +'</p>'+
+						'<p>'+ 'Number of persons in household: ' + cont.quantity +'</p>'+
+						'<p>'+ 'Additional Info: ' + cont.comments +'</p>'+
+						'<p>'+ 'Agree to terms: ' + cont.terms +'</p>'+'<br />'+
 					'</div>'
 				).appendTo('#myxhr');
 				console.log(response);
