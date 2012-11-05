@@ -5,7 +5,7 @@
 				<email>jay@fullsail.edu</email>
 				<url>http://clubugly.com</url>
 				<sex>Male</sex>
-				<group>Daisies</group>
+				<groups>Daisies</groups>
 				<borndate>2011-12-09</borndate>
 				<quantity>12</quantity>
 				<comments>Make them cold</comments>
@@ -16,7 +16,7 @@
 				<email>alvin@gmail.com</email>
 				<url>http://google.com</url>
 				<sex>Male</sex>
-				<group>Timeless Tulips</group>
+				<groups>Timeless Tulips</groups>
 				<borndate>2000-07-06</borndate>
 				<quantity>6</quantity>
 				<comments>Include a mug!</comments>
@@ -27,7 +27,7 @@
 				<email>calvin@gmail.com</email>
 				<url>http://google.com</url>
 				<sex>Male</sex>
-				<group>Orchids</group>
+				<groups>Orchids</groups>
 				<borndate>2000-07-06</borndate>
 				<quantity>6</quantity>
 				<comments>Include a mug!</comments>
