@@ -35,7 +35,8 @@ $(function(){
 });
 
 $(function(){
-	$('#myxhr2').empty();	
+	$('#myxhr2').empty();
+	$("#myxhr2").append("<ul></ul>");	
 	$.ajax({
 		url:	'xhr/data.xml',
 		type: 'GET',
@@ -45,12 +46,24 @@ $(function(){
     				var fname = $(this).find('fname').text();
     				var email = $(this).find('email').text();
     				var url = $(this).find('url').text();
+    				var sex = $(this).find('sex').text();
+    				var groups = $(this).find('groups').text();
+    				var borndate = $(this).find('borndate').text();
+    				var quantity = $(this).find('quantity').text();
+    				var comments = $(this).find('comments').text();
+    				var terms = $(this).find('terms').text();
     			 $(''+
 						'<div class="contact">'+
 							'<p>'+ fname +'</p>'+
 							'<p>'+ email +'</p>'+
 							'<p>'+ url +'</p>'+
-						'</div><br />'		
+							'<p>'+ sex +'</p>'+
+							'<p>'+ groups +'</p>'+
+							'<p>'+ borndate +'</p>'+
+							'<p>'+ quantity +'</p>'+
+							'<p>'+ comments +'</p>'+
+							'<p>'+ terms +'</p>'+
+						'</div><hr />'		
 				).appendTo('#myxhr2');
 				console.log(xml);
 				
