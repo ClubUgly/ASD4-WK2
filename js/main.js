@@ -36,7 +36,7 @@ $(function(){
 
 $(function(){
 	$('#myxhr2').empty();
-	$("#myxhr2").append("<ul></ul>");	
+//	$("#myxhr2").append("<ul></ul>");	
 	$.ajax({
 		url:	'xhr/data.xml',
 		type: 'GET',
@@ -52,17 +52,18 @@ $(function(){
     				var quantity = $(this).find('quantity').text();
     				var comments = $(this).find('comments').text();
     				var terms = $(this).find('terms').text();
+    				
     			 $(''+
 						'<div class="contact">'+
-							'<p>'+ fname +'</p>'+
-							'<p>'+ email +'</p>'+
-							'<p>'+ url +'</p>'+
-							'<p>'+ sex +'</p>'+
-							'<p>'+ groups +'</p>'+
-							'<p>'+ borndate +'</p>'+
-							'<p>'+ quantity +'</p>'+
-							'<p>'+ comments +'</p>'+
-							'<p>'+ terms +'</p>'+
+							'<p>'+ 'Name: ' + fname +'</p>'+
+							'<p>'+ 'Email: '+ email +'</p>'+
+							'<p>'+ 'Website: '+ url +'</p>'+
+							'<p>'+ 'Gender: ' + sex +'</p>'+
+							'<p>'+ 'Candidate Selection: ' + groups +'</p>'+
+							'<p>'+ 'Date of Birth: ' + borndate +'</p>'+
+							'<p>'+ 'Number of persons in household: ' + quantity +'</p>'+
+							'<p>'+ 'Additional Info: ' + comments +'</p>'+
+							'<p>'+ 'Agree to terms: ' + terms +'</p>'+
 						'</div><hr />'		
 				).appendTo('#myxhr2');
 				console.log(xml);
