@@ -33,20 +33,35 @@ $(function(){
 	});
 
 });
-/*
+
 $(function(){
 	
 	$.ajax({
 		url:	'xhr/data.xml',
 		type: 'GET',
 		dataType:	'xml',
-		success: function(response){
-			console.log(response);
+		success: function(xml){			
+				$(xml).find("item").each(function(){
+    				var fname = $(this).find('fname').text();
+    				var email = $(this).find('email').text();
+    				var url = $(this).find('url').text();
+    			 $(''+
+						'<div class="contact">'+
+							'<p>'+ fname +'</p>'+
+							'<p>'+ email +'</p>'+
+							'<p>'+ url +'</p>'+
+						'</div><br />'		
+				).appendTo('#myxhr2');
+				console.log(xml);
+				
+			
+				});
 			}
-		});
+	});
 
 });
 
+/*
 $(function(){
 	
 	$.ajax({
