@@ -35,7 +35,7 @@ $(function(){
 });
 
 $(function(){
-	
+	$('#myxhr2').empty();	
 	$.ajax({
 		url:	'xhr/data.xml',
 		type: 'GET',
