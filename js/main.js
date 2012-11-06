@@ -24,7 +24,7 @@ $(function(){
 						'<p>'+ 'Date of Birth: ' + cont.borndate +'</p>'+
 						'<p>'+ 'Number of persons in household: ' + cont.quantity +'</p>'+
 						'<p>'+ 'Additional Info: ' + cont.comments +'</p>'+
-						'<p>'+ 'Agree to terms: ' + cont.terms +'</p>'+'<br />'+
+						'<p>'+ 'Agree to terms: ' + cont.terms +'</p>'+'<hr />'+
 					'</div>'
 				).appendTo('#myxhr');
 				console.log(response);
