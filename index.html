@@ -1135,7 +1135,7 @@
 					<input type="reset" value="Clear All" data-theme="a" />
 				</div>	
 											
-				<a href="#ordererrors" id="myerrorslink" data-rel="dialog" data-transition="slidedown">Open Errors</a>
+				<a href="#ordererrors" id="myerrorslink" data-rel="dialog" data-transition="pop">Open Errors</a>
 				
 			</form>
 		
@@ -1154,7 +1154,36 @@
 			
 			</div>
 		</div>			
-	</div>	
+	</div>
+	
+	<div data-role="page" id="showdata" data-add-back-btn="true">
+	
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>Display data</h1>
+		</div>
+
+		<div data-role="content" id="data">
+			<ul data-role="listview" data-insert="true" id="contact1">
+			</ul>
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
+			<div data-role="navbar">
+			
+				<ul>
+				
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#GitHub" data-icon="grid">GitHub</a></li>
+					<li><a href="#datapage" data-icon="gear" class="ui-btn-active">Data</a></li>
+					<li><a href="#search" data-icon="search">Search</a></li>
+					<li><a href="#myorder" data-icon="grid">Order</a></li>
+					
+				
+				</ul>
+			
+			</div>
+		</div>			
+	</div>		
 	
 	<div data-role="dialog" id="ordererrors">
 	

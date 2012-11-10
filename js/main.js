@@ -230,7 +230,7 @@ $('#myorder').on('pageinit', function () {
 		makeDiv.attr("id", "items");
 		var makeList = $('<ul></ul>');
 		makeDiv.append(makeList);
-		document.body.append(makeDiv);
+		$(document).append(makeDiv);
 		$('#items').addClass = ("block");
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = $('<li></li>');
