@@ -3,8 +3,8 @@
     //ASD WK 4
     //Cast My Vote
 
-//alert("JavaScript works!");
 
+//JSON DATA
 $(function(){
 	$('#myxhr').empty();
 	$.ajax({
@@ -34,6 +34,7 @@ $(function(){
 
 });
 
+//XML DATA
 $(function(){
 	$('#myxhr2').empty();	
 	$.ajax({
@@ -74,7 +75,7 @@ $(function(){
 
 });
 
-
+//CSV DATA
 $(function(){
 	$('#myxhr3').empty();
 	$.ajax({
@@ -327,33 +328,34 @@ $('#myorder').on('pageinit', function () {
 		editSubmit.key = this.key;
 	}
 	
+	//DELETE FUNCTION
 	function deleteItem(){
 		var ask = confirm("Are you sure you wish to delete this order?");
 		if(ask){
 			localStorage.removeItem(this.key);
 			alert("Order was deleted!!!");
-			location.reload(true);
+			window.location.reload();
 		}else{
 			alert("Order was NOT deleted.");
 		}
 	}
 	
+	//CLEAR FUNCTION
 	function clearLocal(){
 		if(localStorage.length === 0){
 			alert("There is no data to clear.");
 		}else{
 			localStorage.clear();
 			alert("Shopping order is deleted!");
-			location.reload(true);
+			window.location.reload();
 			return false;
 		}
 	}
 	
 	
-function validate(){
-	var myForm = $('#myorder'),
-		myerrorslink = $('#myerrorslink')	
-	;
+	function validate(){
+		var myForm = $('#myorder'),
+			myerrorslink = $('#myerrorslink');
 	
 	myForm.validate({
 		invalidHandler: function(form, validator){
