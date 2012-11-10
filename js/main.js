@@ -102,7 +102,7 @@ $(function(){
 					for (var v=0; v<lines.length; v++){
 							var avote = lines[v];
 					$(''+
-								'<li class="contact">'+
+								'<div class="contact">'+
 								'<p>'+ 'Name: ' + avote[0] +'</p>'+
 								'<p>'+ 'Email: ' + avote[1] +'</p>'+
 								'<p>'+ 'Website: ' + avote[2] +'</p>'+
@@ -112,7 +112,7 @@ $(function(){
 								'<p>'+ 'Number of persons in household: ' + avote[6] +'</p>'+
 								'<p>'+ 'Additional Info: ' + avote[7] +'</p>'+
 								'<p>'+ 'Agree to terms: ' + avote[8] +'</p>'+
-								'</li><hr />'
+								'</div><hr />'
 							).appendTo('#myxhr3');
 					console.log(lines);	
 					}						
@@ -131,7 +131,7 @@ $('#myorder').on('pageinit', function () {
 	var flowerSelection = ["--Choose your flower type--", "Daisies", "Lilies", "Orchids", "Roses", "Timeless Tulips"],
 		sexValue,
 		termsValue = "No",
-		errMsg = $('errors');
+		errMsg = $('#errors');
 		
 		var id;
 	
@@ -172,13 +172,13 @@ $('#myorder').on('pageinit', function () {
 	function toggleControls(n){
 		switch(n){
 			case "on":
-				$('#flowerForm').addClass("none");
+				$('#myorder').addClass("none");
 				$('#clear').addClass("inline");
 				$('#displayLink').addClass("none");
 				$('#addNew').addClass("inline");
 				break;
 			case "off":
-				$('#flowerForm').addClass("block");
+				$('#myorder').addClass("block");
 				$('#clear').addClass("inline");
 				$('#displayLink').addClass("inline");
 				$('#addNew').addClass("none");
@@ -230,7 +230,7 @@ $('#myorder').on('pageinit', function () {
 		var makeList = $('<ul></ul>');
 		makeDiv.append(makeList);
 		document.body.append(makeDiv);
-		$('items').addClass = ("block");
+		$('#items').addClass = ("block");
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = $('<li></li>');
 			var linksLi = $('<li></li>');
@@ -280,7 +280,7 @@ $('#myorder').on('pageinit', function () {
 		
 		//add delete single item link
 		var deleteLink = $('<a></a>');
-		deleteLink.href = "#";
+		deleteLink.href = "href", "#";
 		deleteLink.key = key;
 		var deleteText = $("Delete Order");
 		deleteLink.on("click", deleteItem);
@@ -297,9 +297,9 @@ $('#myorder').on('pageinit', function () {
 		toggleControls("off");
 		
 		//populate the form fields with current localStorage values.
-		$('#fname').val() = item.fname[1];
-		$('#email').val() = item.email[1];
-		$('#url').val() = item.url[1];
+		$('#fname').val(item.fname[1]);
+		$('#email').val(item.email[1]);
+		$('#url').val(item.url[1]);
 		var radios = document.forms[0].sex;
 		for(var i=0; i<radios.length; i++){
 			if(radios[i].val() == "Male" && item.sex[1] == "Male"){
@@ -308,19 +308,19 @@ $('#myorder').on('pageinit', function () {
 				radios[i].attr("checked", "checked");
 			}
 		}
-		$('#borndate').val() = item.borndate[1];
-		$('#groups').val() = item.group[1];
-		$('#quantity').val() = item.quantity[1];
-		$('#comments').val() = item.comments[1];
+		$('#borndate').val(item.borndate[1]);
+		$('#groups').val(item.groups[1]);
+		$('#quantity').val(item.quantity[1]);
+		$('#comments').val(item.comments[1]);
 		if(item.terms[1] == "Yes"){
-			$('terms').attr("checked", "checked");
+			$('#terms').attr("checked", "checked");
 		}
 		
 		//remove the initial listener from the input save order button
 		save.removeEventListener("click", storeData);
 		//change submit button value to edit button
-		$('submit').value = "Edit Order";
-		var editSubmit = $('submit');
+		$('#submit').val("Edit Order");
+		var editSubmit = $('#submit');
 		//save the key value established in this function as a property of the edit submit event.
 		//so we can use that value when we save the data we edited.
 		editSubmit.on("click", validate);
