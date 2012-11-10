@@ -129,7 +129,7 @@ $('#myorder').on('pageinit', function () {
 	console.log("Home Page loaded.");
 
 	//Variable defaults
-	var flowerSelection = ["--Choose your flower type--", "Daisies", "Lilies", "Orchids", "Roses", "Timeless Tulips"],
+	var CandidateSelection = ["--Choose your Candidate--", "Barack Obama", "Mitt Romney", "Ron Paul", "James McCall", "Gary Johnson"],
 		sexValue,
 		termsValue = "No",
 		errMsg = $('#errors');
@@ -142,9 +142,9 @@ $('#myorder').on('pageinit', function () {
 			selectLi = $('select'),
 			makeSelect = $('<select></select>');
 			makeSelect.attr("id", "groups");
-		for (var i=0, j=flowerSelection.length; i<j; i++){
+		for (var i=0, j=CandidateSelection.length; i<j; i++){
 			var makeOption = $('<option></option>');
-			var optText = flowerSelection[i];
+			var optText = CandidateSelection[i];
 			makeOption.attr("value", optText);
 			makeOption.html = optText;
 			makeSelect.append(makeOption);
@@ -192,8 +192,9 @@ $('#myorder').on('pageinit', function () {
 	
 	function storeData(key){
 		//if there is no key, this means this is a brand new item and we need a new key
+		console.log('storeData');
 		if(!key){
-			var id 			= Math.floor(Math.random()*100000001);		
+			var id = Math.floor(Math.random()*100000001);		
 		}else{
 			//set the id to the existing key were editing so that it will save over the data
 			//the key is the same key thats been passed along from the editSubmit even handle
@@ -210,7 +211,7 @@ $('#myorder').on('pageinit', function () {
 			item.url 		= ["Home Page:", $('#url').val()];
 			item.sex		= ["Sex:", sexValue];			
 			item.borndate 	= ["Date of Birth:", $('#borndate').val()];
-			item.group	 	= ["Flower Type:", $('#groups').val()];
+			item.groups	 	= ["Flower Type:", $('#groups').val()];
 			item.quantity	= ["Quantity:", $('#quantity').val()];
 			item.comments 	= ["Additional Info:", $('#comments').val()];
 			item.terms 		= ["TOS:", $('#terms').val()];
@@ -230,7 +231,7 @@ $('#myorder').on('pageinit', function () {
 		makeDiv.attr("id", "items");
 		var makeList = $('<ul></ul>');
 		makeDiv.append(makeList);
-		$(document).append(makeDiv);
+		$('#showdata').append(makeDiv);
 		$('#items').addClass = ("block");
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = $('<li></li>');
@@ -259,7 +260,7 @@ $('#myorder').on('pageinit', function () {
 		var imageLi = $('<li></li>');
 		makeSubList.append(imageLi);
 		var newImg = $('<img />');
-		var setSrc = newImg.attr("src", "images/"+ catName + ".jpg");
+		var setSrc = newImg.attr("src", "images/candidates/"+ catName + ".png");
 		imageLi.append(newImg);
 	}
 	
@@ -326,6 +327,14 @@ $('#myorder').on('pageinit', function () {
 		//so we can use that value when we save the data we edited.
 		editSubmit.on("click", validate);
 		editSubmit.key = this.key;
+	}
+
+	function autoFillData(){
+		//Store the JSON OBJECT in local storage
+		for(var n in json){
+			var id 			= Math.floor(Math.random()*100000001);
+			localStorage.setItem(id, JSON.stringify(json[n]));
+		}
 	}
 	
 	//DELETE FUNCTION
