@@ -193,14 +193,14 @@ $('#myorder').on('pageinit', function () {
 	function storeData(key){
 		//if there is no key, this means this is a brand new item and we need a new key
 		console.log('storeData');
-		if(!key){
+		//if(!key){
 			var id = Math.floor(Math.random()*100000001);		
-		}else{
+		//}else{
 			//set the id to the existing key were editing so that it will save over the data
 			//the key is the same key thats been passed along from the editSubmit even handle
 			//to the validate function, and then passed here into the storeData function.
-			id = key;
-		}
+		//	id = key;
+		//}
 		// collect all form field values and store in an object
 		// object properties contain array with the form label and input value
 		getSelectedRadio();
@@ -362,29 +362,30 @@ $('#myorder').on('pageinit', function () {
 	}
 	
 	
-	function validate(){
-		var myForm = $('#myorder'),
-			myerrorslink = $('#myerrorslink');
+	var validate = function(){
+		console.log('test')
+		var myForm = $('#myorder');
+	//		myerrorslink = $('#myerrorslink');
 	
 	myForm.validate({
-		invalidHandler: function(form, validator){
-			myerrorslink.click();
-			var html = '';
-			for(var key in validator.submitted){
-				var label = $('label[for^="'+ key +'"]').not('[generated]');
-				var legend = label.closest('fieldset').find('.ui-controlgroup-label');
-				var fieldName = legend.length ? legend.text() : label.text();
-				html += '<li>' + fieldName +'</li>';
-			};
-			$('#ordererrors ul').html(html);
-		},
+		invalidHandler: function(form, validator){},
+			//myerrorslink.click();
+		//	var html = '';
+		//	for(var key in validator.submitted){
+		//		var label = $('label[for^="'+ key +'"]').not('[generated]');
+		//		var legend = label.closest('fieldset').find('.ui-controlgroup-label');
+		//		var fieldName = legend.length ? legend.text() : label.text();
+		//		html += '<li>' + fieldName +'</li>';
+		//	};
+		//	$('#ordererrors ul').html(html);
+		
 		submitHandler: function(){
 			var data = myForm.serializeArray();
 			//parseMyOrder(data);
 			storeData(data);
 		}
 	});
-}
+};
 
 	makeCats();
 	
